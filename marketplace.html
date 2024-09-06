@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farm Fusion - Order Fruits & Vegetables Online</title>
+    <style>
+        /* Your existing CSS styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            animation: fadeIn 1s ease-in;
+        }
+        header {
+    background-image: url(BG.jpg); /* Replace with your image file */
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 2rem;
+    animation: slideIn 1s ease-out;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    background-image: url(data:image/jpeg;base64,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); /* Replace with your image file */
+    background-size: cover;
+    background-position: center;
+}
+
+        }
+        @keyframes slideIn {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Playfair+Display:ital,wght@1,500&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+.container {
+  height: 100vh;
+  width: 100%;
+  background-color: #F9F9F9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+}
+.container h1 {
+  font-family: "Dancing Script", cursive;
+  font-weight: 700;
+  letter-spacing: 0.2rem;
+}
+.container .gallery {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container .gallery .img-box {
+  width: 80px;
+  height: 500px;
+  margin: 5px;
+  border: 0.5px solid lightgray;
+  border-radius: 50px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  background: url(img4.jpg);
+  background-position: center;
+  background-size: cover;
+  cursor: pointer;
+  position: relative;
+  transition: width 0.4s;
+}
+.container .gallery .img-box h2 {
+  font-family: "Playfair Display", serif;
+  letter-spacing: 0.2rem;
+  font-weight: 500;
+  opacity: 0;
+  position: absolute;
+  bottom: 0;
+  left: 10%;
+  width: 100%;
+  background-color: rgba(238, 247, 255, 0.5882352941);
+  padding: 2% 5%;
+  border-radius: 8px 0 0 8px;
+  transition: bottom 0.4s, opacity;
+}
+.container .gallery .img-box:nth-child(2) {
+  background: url(img11.jpg);
+  background-position: center;
+  background-size: cover;
+}
+.container .gallery .img-box:nth-child(3) {
+  background: url(img2.jpg);
+  background-position: center;
+  background-size: cover;
+}
+.container .gallery .img-box:nth-child(4) {
+  background: url(img3.jpg);
+  background-position: center;
+  background-size: cover;
+}
+.container .gallery .img-box:hover {
+  width: 300px;
+}
+.container .gallery .img-box:hover h2 {
+  opacity: 1;
+  bottom: 10%;
+}
+
+@media screen and (max-width: 600px) {
+  .img-box {
+    height: 300px;
+  }
+  .img-box:hover {
+    width: 220px !important;
+  }
+}
+@media screen and (max-width: 450px) {
+  h1 {
+    font-size: 1.2rem !important;
+  }
+  h2 {
+    font-size: 0.9rem !important;
+  }
+  .img-box {
+    width: 50px !important;
+    height: 200px !important;
+    border-radius: 20px !important;
+  }
+  .img-box:hover {
+    width: 110px !important;
+  }
+}/*# sourceMappingURL=style.css.map */
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #333;
+        }
+        nav a {
+            padding: 14px 20px;
+            display: block;
+            color: white;
+            text-decoration: none;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+        .container {
+            padding: 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+        .order-section, .register-section {
+            background-color: white;
+            border: 1px solid #ccc;
+            margin-bottom: 20px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            animation: fadeIn 1s ease-in;
+        }
+        h2 {
+            color: #4CAF50;
+        }
+        .product-list {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        .product-item {
+            width: 30%;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            margin: 10px;
+            padding: 15px;
+            text-align: center;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            opacity: 0;
+            animation: fadeInUp 1s ease-in forwards;
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .product-item img {
+            max-width: 100%;
+            height: auto;
+        }
+        .product-item button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: background-color 0.3s ease;
+        }
+        .product-item button:hover {
+            background-color: #45a049;
+        }
+        form {
+            background-color: white;
+            padding: 20px;
+            border: 1px solid #ccc;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            animation: fadeIn 1s ease-in;
+        }
+        input[type="text"], input[type="email"], input[type="password"], input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus {
+            border-color: #4CAF50;
+            box-shadow: 0 0 5px rgba(0, 255, 0, 0.5);
+            outline: none;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+            animation: slideIn 1s ease-out;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        .language-switcher {
+            margin: 20px;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .language-switcher:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    
+
+<header>
+    <h1 id="header-title">Farm Fusion</h1>
+    <p id="header-subtitle">Order Fresh Fruits & Vegetables Online</p>
+    <button class="language-switcher" onclick="toggleLanguage()">Switch to Gujarati</button>
+</header>
+
+<nav>
+    <a href="file:///C:/Users/Divy/Desktop/New%20folder/Farmer.html" id="nav-home">Home</a>
+    <a href="file:///C:/Users/Divy/Desktop/New%20folder/Fruits.html" id="nav-fruits">Fruits</a>
+    <a href="file:///C:/Users/Divy/Desktop/New%20folder/Veggies.html" id="nav-vegetables">Vegetables</a>
+    <a href="file:///C:/Users/Divy/Desktop/New%20folder/About.html" id="nav-about">About</a>
+    <a href="file:///C:/Users/Divy/Desktop/New%20folder/login.html" id="nav-login">Login</a>
+</nav>
+
+<div class="container">
+    <h1>Expandable Image Gallery</h1>
+    <div class="gallery">
+        <div class="img-box">
+            <h2>Fresh</h2>
+        </div>
+        <div class="img-box">
+            <h2>Quick Delivered</h2>
+        </div>
+        <div class="img-box">
+            <h2>Fruits and Veggies</h2>
+        </div>
+        <div class="img-box">
+            <h2>At Home</h2>
+        </div>
+    </div>
+</div>
+
+    <!-- Registration Section -->
+    <section class="register-section">
+        <h2 id="register-title">Register for a Farm Fusion Account</h2>
+        <form>
+            <label for="name" id="label-name">Full Name:</label><br>
+            <input type="text" id="name" name="name" placeholder="Your Name" required><br>
+
+            <label for="email" id="label-email">Email Address:</label><br>
+            <input type="email" id="email" name="email" placeholder="Your Email" required><br>
+
+            <label for="password" id="label-password">Password:</label><br>
+            <input type="password" id="password" name="password" placeholder="Create Password" required><br>
+
+            <label for="address" id="label-address">Delivery Address:</label><br>
+            <input type="text" id="address" name="address" placeholder="Your Address" required><br>
+
+            <input type="submit" value="Register">
+        </form>
+    </section>
+</div>
+
+<footer>
+    <p id="footer-text">&copy; 2024 Farm Fusion. All rights reserved.</p>
+</footer>
+
+<script>
+    const translations = {
+        en: {
+            "header-title": "Farm Fusion",
+            "header-subtitle": "Order Fresh Fruits & Vegetables Online",
+            "nav-home": "Home",
+            "nav-fruits": "Fruits",
+            "nav-vegetables": "Vegetables",
+            "nav-about": "About",
+            "nav-register": "Register",
+            "nav-contact": "Contact",
+            "order-title": "Order Fruits & Vegetables",
+            "product1-title": "Apples",
+            "product1-price": "₹85 / kg",
+            "product1-button": "Add to Cart",
+            "product2-title": "Bananas",
+            "product2-price": "₹45 / kg",
+            "product2-button": "Add to Cart",
+            "product3-title": "Carrots",
+            "product3-price": "₹55 / kg",
+            "product3-button": "Add to Cart",
+            "register-title": "Register for a Farm Fusion Account",
+            "label-name": "Full Name:",
+            "label-email": "Email Address:",
+            "label-password": "Password:",
+            "label-address": "Delivery Address:",
+            "footer-text": "&copy; 2024 Farm Fusion. All rights reserved."
+        },
+        gu: {
+            "header-title": "ફાર્મ ફ્યૂઝન",
+            "header-subtitle": "ફળો અને શાકભાજી ઓનલાઇન ઓર્ડર કરો",
+            "nav-home": "ઘર",
+            "nav-fruits": "ફળો",
+            "nav-vegetables": "શાકભાજી",
+            "nav-about": "અમારા વિશે",
+            "nav-register": "નોંધણી",
+            "nav-contact": "સંપર્ક",
+            "order-title": "ફળો અને શાકભાજી ઓર્ડર કરો",
+            "product1-title": "સફરજન",
+            "product1-price": "₹85 / કિલો",
+            "product1-button": "કાર્ટમાં ઉમેરો",
+            "product2-title": "કેળા",
+            "product2-price": "₹45 / કિલો",
+            "product2-button": "કાર્ટમાં ઉમેરો",
+            "product3-title": "ગાજર",
+            "product3-price": "₹55 / કિલો",
+            "product3-button": "કાર્ટમાં ઉમેરો",
+            "register-title": "ફાર્મ ફ્યૂઝન અકાઉન્ટ માટે નોંધણી કરો",
+            "label-name": "પૂર્ણ નામ:",
+            "label-email": "ઇમેઇલ સરનામું:",
+            "label-password": "પાસવર્ડ:",
+            "label-address": "ડિલિવરી સરનામું:",
+            "footer-text": "&copy; 2024 ફાર્મ ફ્યૂઝન. બધા અધિકાર સંગ્રહિત."
+        }
+    };
+
+    let currentLanguage = 'en';
+
+    function toggleLanguage() {
+        currentLanguage = currentLanguage === 'en' ? 'gu' : 'en';
+        updateText();
+        document.querySelector('.language-switcher').textContent = currentLanguage === 'en' ? 'Switch to Gujarati' : 'Switch to English';
+    }
+
+    function updateText() {
+        for (const [key, value] of Object.entries(translations[currentLanguage])) {
+            const element = document.getElementById(key);
+            if (element) {
+                element.innerHTML = value;
+            }
+        }
+    }
+
+    // Initialize text on page load
+    updateText();
+</script>
+
+</body>
+</html>

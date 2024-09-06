@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farm Fusion - Connecting Farmers to Markets</title>
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Full-Screen Background Video */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: url('background-video.mp4') no-repeat center center;
+            background-size: cover;
+            opacity: 0.5;
+            animation: fadeIn 5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 0.5;
+            }
+        }
+
+        /* Body Styling */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: rgba(244, 244, 244, 0.9); /* Slightly transparent background */
+            color: #333;
+            padding: 0;
+            overflow: hidden;
+            cursor: url('custom-cursor.png'), auto; /* Custom cursor */
+        }
+
+        /* Header Styling with Animation */
+        header {
+            background: rgba(51, 51, 51, 0.8);
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+            animation: slideIn 1s ease-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        /* Language Switcher */
+        .language-switcher {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 4px;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        .language-switcher:hover {
+            background-color: #45a049;
+        }
+
+        /* Navigation Styling */
+        nav {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            margin: 0 10px;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #40da11;
+        }
+
+        /* Main Content Styling */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        /* Section Styling with Animation */
+        section {
+            margin-bottom: 20px;
+            animation: slideIn 1s ease-out;
+        }
+
+        /* Form Styling */
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        form label, form input {
+            margin-bottom: 10px;
+        }
+
+        form input[type="text"], form input[type="submit"] {
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        form input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+        }
+
+        form input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        /* Footer Styling */
+        footer {
+            background: rgba(51, 51, 51, 0.8);
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            animation: slideIn 1s ease-out;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        /* Custom Cursor Effect */
+        body::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: rgba(0, 123, 255, 0.5);
+            pointer-events: none;
+            transition: transform 0.1s ease-out;
+            transform: translate(-50%, -50%);
+        }
+
+        /* Follow Cursor Effect */
+        body:hover::after {
+            transform: translate(-50%, -50%) scale(1.5);
+        }
+
+        /* Feature Box Animation */
+        .feature-box {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .feature-box:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <button class="language-switcher" onclick="toggleLanguage()">Switch to Gujarati</button>
+    <h1 id="site-title">Farm Fusion</h1>
+    <p id="site-slogan">Connecting Farmers to Markets, Growing Together</p>
+</header>
+
+<nav>
+    <a href="#" id="nav-home">Home</a>
+    <a href="#" id="nav-marketplace">Marketplace</a>
+    <a href="#" id="nav-farmers">Farmers</a>
+    <a href="#" id="nav-support">Support</a>
+</nav>
+
+<div class="container">
+    <section>
+        <h2 id="welcome-title">Welcome to Farm Fusion</h2>
+        <p id="welcome-text">This website is designed to help farmers sell fruits, veggies, and cereals directly to consumers, removing mediators and increasing their efficiency and productivity.</p>
+    </section>
+
+    <section class="features">
+        <div class="feature-box">
+            <h3 id="feature-quick-links">Quick Links</h3>
+            <p id="feature-quick-links-text">Access all tasks with ease, including product search, filtering options, and browsing.</p>
+        </div>
+        <!-- Repeat for other feature boxes, with IDs for translation -->
+    </section>
+
+    <section>
+        <h2 id="register-title">Register as a Farmer</h2>
+        <form>
+            <label for="name" id="label-name">Name:</label>
+            <input type="text" id="name" name="name" placeholder="Your Name">
+
+            <label for="location" id="label-location">Farm Location:</label>
+            <input type="text" id="location" name="location" placeholder="Farm Location">
+
+            <label for="produce" id="label-produce">Type of Produce:</label>
+            <input type="text" id="produce" name="produce" placeholder="Type of Produce">
+
+            <label for="contact" id="label-contact">Contact Info:</label>
+            <input type="text" id="contact" name="contact" placeholder="Contact Info">
+
+            <label for="payment" id="label-payment">Preferred Payment Method:</label>
+            <input type="text" id="payment" name="payment" placeholder="Payment Method">
+
+            <input type="submit" value="Register">
+        </form>
+    </section>
+</div>
+
+<footer>
+    <p id="footer-text">&copy; 2024 Farm Fusion. All rights reserved.</p>
+</footer>
+
+<script>
+    // Language data
+    const translations = {
+        en: {
+            "site-title": "Farm Fusion",
+            "site-slogan": "Connecting Farmers to Markets, Growing Together",
+            "welcome-title": "Welcome to Farm Fusion",
+            "welcome-text": "This website is designed to help farmers sell fruits, veggies, and cereals directly to consumers, removing mediators and increasing their efficiency and productivity.",
+            "feature-quick-links": "Quick Links",
+            "feature-quick-links-text": "Access all tasks with ease, including product search, filtering options, and browsing.",
+            "register-title": "Register as a Farmer",
+            "label-name": "Name:",
+            "label-location": "Farm Location:",
+            "label-produce": "Type of Produce:",
+            "label-contact": "Contact Info:",
+            "label-payment": "Preferred Payment Method:",
+            "footer-text": "&copy; 2024 Farm Fusion. All rights reserved."
+        },
+        gu: {
+            "site-title": "ફાર્મ ફ્યૂઝન",
+            "site-slogan": "કર્ષકોને બજારો સાથે જોડવું, એકસાથે વધવું",
+            "welcome-title": "ફાર્મ ફ્યૂઝનમાં આપનું સ્વાગત છે",
+            "welcome-text": "આ વેબસાઇટ કૃષિ સંબંધિત મિડિયેટરોને દૂર કરીને, ખેડૂતને સીધા ગ્રાહકોને ફળો, શાકભાજી, અને અનાજ વેચવામાં સહાય કરવા માટે ડિઝાઇન કરવામાં આવી છે.",
+            "feature-quick-links": "ઝડપી લિંક્સ",
+            "feature-quick-links-text": "ઉત્પાદન શોધ, ફિલ્ટરિંગ વિકલ્પો અને બ્રાઉઝિંગ સહિત તમામ કાર્ય સરળતાથી પ્રવેશ કરો.",
+            "register-title": "ખેડૂત તરીકે નોંધણી કરો",
+            "label-name": "નામ:",
+            "label-location": "કૃષિ સ્થળ:",
+            "label-produce": "ઉત્પાદન પ્રકાર:",
+            "label-contact": "સંપર્ક માહિતી:",
+            "label-payment": "પસંદગીની ચુકવણી પદ્ધતિ:",
+            "footer-text": "&copy; 2024 ફાર્મ ફ્યૂઝન. તમામ અધિકારો સુરક્ષિત."
+        }
+    };
+
+    let currentLanguage = 'en';
+
+    function toggleLanguage() {
+        currentLanguage = currentLanguage === 'en' ? 'gu' : 'en';
+        updateText();
+        document.querySelector('.language-switcher').textContent = currentLanguage === 'en' ? 'Switch to Gujarati' : 'Switch to English';
+    }
+
+    function updateText() {
+        for (const [key, value] of Object.entries(translations[currentLanguage])) {
+            document.getElementById(key).innerHTML = value;
+        }
+    }
+</script>
+
+</body>
+</html>

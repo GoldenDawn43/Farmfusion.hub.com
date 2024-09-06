@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Farm Fusion Support</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        header {
+    background-image: url(BG.jpg); /* Replace with your image file */
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 2rem;
+    animation: slideIn 1s ease-out;
+}
+
+        h1 {
+            margin: 0;
+        }
+        h2 {
+            color: #333;
+        }
+        p {
+            line-height: 1.6;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        ul li {
+            margin: 10px 0;
+        }
+        a {
+            color: #4CAF50;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 20px;
+        }
+        #language-btn {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            margin: 10px 0;
+        }
+        #language-btn:hover {
+            background-color: #45a049;
+        }
+    </style>
+    <script>
+        function switchLanguage() {
+            var elements = document.querySelectorAll("[data-lang]");
+            var button = document.getElementById('language-btn');
+            var currentLang = button.dataset.lang;
+
+            elements.forEach(function(el) {
+                var enText = el.getAttribute("data-en");
+                var guText = el.getAttribute("data-gu");
+
+                if (currentLang === 'en') {
+                    el.innerHTML = guText;
+                } else {
+                    el.innerHTML = enText;
+                }
+            });
+
+            if (currentLang === 'en') {
+                button.innerHTML = "Switch to English";
+                button.dataset.lang = 'gu';
+            } else {
+                button.innerHTML = "Switch to Gujarati";
+                button.dataset.lang = 'en';
+            }
+        }
+    </script>
+</head>
+<body>
+
+    <header>
+        <h1>Farm Fusion Support</h1>
+    </header>
+
+    <div class="container">
+        <button id="language-btn" onclick="switchLanguage()" data-lang="en">Switch to Gujarati</button>
+
+        <h2 data-lang="en" data-en="Welcome to Farm Fusion Support" data-gu="ફાર્મ ફ્યુઝન સપોર્ટમાં આપનું સ્વાગત છે">Welcome to Farm Fusion Support</h2>
+        <p data-lang="en" data-en="We're here to help you get the most out of your Farm Fusion experience. Whether you have questions about our products, need assistance with your account, or want to learn more about our services, you've come to the right place." 
+           data-gu="અમે તમને ફાર્મ ફ્યુઝનનો શ્રેષ્ઠ અનુભવ મેળવવામાં મદદ કરવા અહીં છીએ. શું તમને અમારા ઉત્પાદનો વિશે પ્રશ્નો છે, તમારા એકાઉન્ટમાં મદદની જરૂર છે, અથવા અમારી સેવાઓ વિશે વધુ જાણવું છે, તમે યોગ્ય જગ્યાએ આવ્યા છો.">
+           We're here to help you get the most out of your Farm Fusion experience. Whether you have questions about our products, need assistance with your account, or want to learn more about our services, you've come to the right place.
+        </p>
+
+        <h2 data-lang="en" data-en="How Can We Help You?" data-gu="અમે તમને કેવી રીતે મદદ કરી શકીએ?">How Can We Help You?</h2>
+
+        <section>
+            <h3 data-lang="en" data-en="Account & Membership" data-gu="એકાઉન્ટ અને સભ્યપદ">Account & Membership</h3>
+            <ul>
+                <li><a href="file:///C:/Users/Divy/Desktop/New%20folder/login.html" data-lang="en" data-en="Creating and Managing Your Account" data-gu="તમારું એકાઉન્ટ બનાવવું અને મેનેજ કરવું">Creating and Managing Your Account</a></li>
+                <li><a href="#" data-lang="en" data-en="Subscription Plans" data-gu="સબ્સ્ક્રિપ્શન યોજના">Subscription Plans</a></li>
+                <li><a href="#" data-lang="en" data-en="Updating Your Personal Information" data-gu="તમારી વ્યક્તિગત માહિતી અપડેટ કરવી">Updating Your Personal Information</a></li>
+            </ul>
+        </section>
+
+        <section>
+            <h3 data-lang="en" data-en="Product Support" data-gu="ઉત્પાદન સહાય">Product Support</h3>
+            <ul>
+                <li><a href="#" data-lang="en" data-en="Product Guides" data-gu="ઉત્પાદન માર્ગદર્શિકા">Product Guides</a></li>
+                <li><a href="#" data-lang="en" data-en="How to Use Farm Fusion Products" data-gu="ફાર્મ ફ્યુઝન ઉત્પાદનો કેવી રીતે વાપરશો">How to Use Farm Fusion Products</a></li>
+                <li><a href="#" data-lang="en" data-en="Troubleshooting" data-gu="ટ્રબલશૂટિંગ">Troubleshooting</a></li>
+            </ul>
+        </section>
+
+        <section>
+            <h3 data-lang="en" data-en="Contact Us" data-gu="અમારો સંપર્ક કરો">Contact Us</h3>
+            <p data-lang="en" data-en="If you can't find the answer you're looking for, feel free to contact our support team directly."
+               data-gu="જો તમે શોધી રહ્યા છો તે ઉત્તર નહીં મળે, તો અમારી સહાય ટીમનો સીધો સંપર્ક કરો.">
+               If you can't find the answer you're looking for, feel free to contact our support team directly.
+            </p>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Farm Fusion. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>

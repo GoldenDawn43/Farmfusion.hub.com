@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VeggieMart - Vegetables</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+            color: #333;
+            overflow-x: hidden;
+        }
+        
+        /* Container and Background */
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+            transition: all 0.5s ease;
+        }
+
+        .container:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Animating Background */
+        @keyframes backgroundMove {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        body {
+            background: linear-gradient(90deg, #FFDEE9, #B5FFFC);
+            background-size: 400% 400%;
+            animation: backgroundMove 15s ease infinite;
+        }
+
+        /* Text Animation */
+        h1 {
+            text-align: center;
+            font-size: 48px;
+            color: #333;
+            margin-bottom: 20px;
+            animation: textFlicker 3s ease infinite;
+        }
+
+        @keyframes textFlicker {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        /* Section Header */
+        .section-header {
+            text-align: center;
+            font-size: 28px;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            color: #fff;
+            background-color: #4CAF50;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Product Grid */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            grid-gap: 20px;
+        }
+        
+        .product-card {
+            background-color: #fff;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .product-card:hover {
+            transform: scale(1.07);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Image Styling */
+        .product-image {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px 10px 0 0;
+        }
+        
+        .product-info {
+            padding: 20px;
+        }
+
+        .product-name {
+            font-weight: bold;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        
+        .product-price {
+            font-size: 16px;
+            color: #666;
+        }
+        
+        /* Buy Button */
+        .buy-button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+            margin-top: 10px;
+        }
+
+        .buy-button:hover {
+            background-color: #45a049;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.4);
+        }
+
+        .modal-content {
+            background-color: #fff;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 500px;
+            border-radius: 10px;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>VeggieMart - Vegetables</h1>
+
+        <div class="section-header">Fresh Vegetables Available</div>
+        <div class="product-grid">
+            <!-- Vegetable Cards -->
+            <div class="product-card" onclick="showPopup('Ringan')">
+                <img src="baigan.jpg" alt="Ringan" class="product-image">
+                <div class="product-info">
+                    <h2 class="product-name">Ringan (Brinjal)</h2>
+                    <p class="product-price">₹ 40/kg</p>
+                    <button class="buy-button">Buy Now</button>
+                </div>
+            </div>
+            <div class="product-card" onclick="showPopup('Bhindi')">
+                <img src="bhindi.jpg" alt="Bhindi" class="product-image">
+                <div class="product-info">
+                    <h2 class="product-name">Bhindi (Okra)</h2>
+                    <p class="product-price">₹ 60/kg</p>
+                    <button class="buy-button">Buy Now</button>
+                </div>
+            </div>
+            <div class="product-card" onclick="showPopup('Tomato')">
+                <img src="tomato.jpg" alt="Tomato" class="product-image">
+                <div class="product-info">
+                    <h2 class="product-name">Tomato</h2>
+                    <p class="product-price">₹ 80/kg</p>
+                    <button class="buy-button">Buy Now</button>
+                </div>
+            </div>
+            <div class="product-card" onclick="showPopup('Cucumber')">
+                <img src="cucmenber.jpg" alt="Cucumber" class="product-image">
+                <div class="product-info">
+                    <h2 class="product-name">Cucumber</h2>
+                    <p class="product-price">₹ 20/kg</p>
+                    <button class="buy-button">Buy Now</button>
+                </div>
+            </div>
+            <div class="product-card" onclick="showPopup('Carrot')">
+                <img src="carrot.jpg" alt="Carrot" class="product-image">
+                <div class="product-info">
+                    <h2 class="product-name">Carrot</h2>
+                    <p class="product-price">₹ 120/kg</p>
+                    <button class="buy-button">Buy Now</button>
+                </div>
+            </div>
+            <div class="product-card" onclick="showPopup('Cauliflower')">
+                <img src="cauliflower.jpg" alt="Cauliflower" class="product-image">
+                <div class="product-info">
+                    <h2 class="product-name">Cauliflower</h2>
+                    <p class="product-price">₹ 50/kg</p>
+                    <button class="buy-button">Buy Now</button>
+                </div>
+            </div>
+            <!-- Add more product cards here, up to 25 vegetables -->
+
+            <!-- Example of additional vegetables -->
+            <div class="product-card" onclick="showPopup('Onion')">
+                <img src="onion.jpg" alt="Onion" class="product-image">
+                <div class="product-info">
+                    <h2 class="product-name">Onion</h2>
+                    <p class="product-price">₹ 80/kg</p>
+                    <button class="buy-button">Buy Now</button>
+                </div> 
+            </div>
+            <div class="product-card" onclick="showPopup('Garlic')">
+                <img src="garlie.jpg" alt="Garlic" class="product-image">
+                <div class="product-info">
+                    <h2 class="product-name">Garlic</h2>
+                    <p class="product-price">₹ 110/kg</p>
+                    <button class="buy-button">Buy Now</button>
+                </div>
+
+                
+
+            </script>
+        </body>
+        </html>
+
+
+

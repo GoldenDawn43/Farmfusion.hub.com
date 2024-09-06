@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FruitMart - Fruits</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+            color: #333;
+            overflow-x: hidden;
+        }
+        
+        /* Container and Background */
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+            transition: all 0.5s ease;
+        }
+
+        .container:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Animating Background */
+        @keyframes backgroundMove {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        body {
+            background: linear-gradient(90deg, #FFDEE9, #B5FFFC);
+            background-size: 400% 400%;
+            animation: backgroundMove 15s ease infinite;
+        }
+
+        /* Text Animation */
+        h1 {
+            text-align: center;
+            font-size: 48px;
+            color: #333;
+            margin-bottom: 20px;
+            animation: textFlicker 3s ease infinite;
+        }
+
+        @keyframes textFlicker {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        /* Section Header */
+        .section-header {
+            text-align: center;
+            font-size: 28px;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            color: #fff;
+            background-color: #4CAF50;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Product Grid */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            grid-gap: 20px;
+        }
+        
+        .product-card {
+            background-color: #fff;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .product-card:hover {
+            transform: scale(1.07);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Image Styling */
+        .product-image {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px 10px 0 0;
+        }
+        
+        .product-info {
+            padding: 20px;
+        }
+
+        .product-name {
+            font-weight: bold;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        
+        .product-price {
+            font-size: 16px;
+            color: #666;
+        }
+        
+        /* Buy Button */
+        .buy-button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+            margin-top: 10px;
+        }
+
+        .buy-button:hover {
+            background-color: #45a049;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.4);
+        }
+
+        .modal-content {
+            background-color: #fff;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 500px;
+            border-radius: 10px;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>FruitMart - Fruits</h1>
+
+        <div class="section-header">Fresh Fruits Available</div>
+        <div class="product-grid">
+            <!-- Fruit Cards -->
+            <div class="product-card" onclick="showPopup('Apple', '₹ 120/kg')">
+                <img src="apple.jpg" alt="Apple" class="product-image">
+                <div class="product-info">
+                    <h2 class="product-name">Apple</h2>
+                    <p class="product-price">₹ 84/kg</p>
+                    <button class="buy-button">Buy Now</button>
+                </div>
+            </div>
+            <div class="product-card" onclick="showPopup('Banana', '₹ 50/kg')">
+                <img src="banana.jpg" alt="Banana" class="product-image">
+                <div class="product-info">
+                    <h2 class="product-name">Banana</h2>
+                    <p class="product-price">₹ 45/kg</p>
+                    <button class="buy-button">Buy Now</button>
+                </div>
+            </div>
+            <div class="product-card" onclick="showPopup('Orange', '₹ 60/kg')">
+                <img src="orange.jpg" alt="Orange" class="product-image">
+                <div class="product-info">
+                    <h2 class="product-name">Orange</h2>
+                    <p class="product-price">₹ 75/kg</p>
+                    <button class="buy-button">Buy Now</button>
+                </div>
+            </div>
+            <div class="product-card" onclick="showPopup('Grapes', '₹ 100/kg')">
+                <img src="grape.jpg" alt="Grapes" class="product-image">
+                <div class="product-info">
+                    <h2 class="product-name">Grapes</h2>
+                    <p class="product-price">₹ 80/kg</p>
+                    <button class="buy-button">Buy Now</button>
+                </div>
+            </div>
+            <div class="product-card" onclick="showPopup('Mango', '₹ 120/kg')">
+                <img src="mango.jpg" alt="Mango" class="product-image">
+                <div class="product-info">
+                    <h2 class="product-name">Mango</h2>
+                    <p class="product-price">₹ 150/kg</p>
+                    <button class="buy-button">Buy Now</button>
+                </div>
+            </div>
+            <div class="product-card" onclick="showPopup('Pineapple', '₹ 90/kg')">
+                <img src="pineapple.jpg" alt="Pineapple" class="product-image">
+                <div class="product-info">
+                    <h2 class="product-name">Pineapple</h2>
+                    <p class="product-price">₹ 55/kg</p>
+                    <button class="buy-button">Buy Now</button>
+                </div>
+            </div>
+            <div class="product-card" onclick="showPopup('Watermelon', '₹ 50/kg')">
+                <img src= "watermelon.jpg" alt="Watermelon" class="product-image">
+                <div class="product-info">
+                    <h2 class="product-name">Watermelon</h2>
+                    <p class="product-price">₹ 20/kg</p>
+                    <button class="buy-button">Buy Now</button>
+                </div>
+            </div>
+            <div class="product-card" onclick="showPopup('Kiwi', '₹ 150/kg')">
+                <img src="kiwi.jpg" alt="Kiwi" class="product-image">
+                <div class="product-info">
+                    <h2 class="product-name">Kiwi</h2>
+                    <p class="product-price">₹ 200/kg</p>
+                    <button class="buy-button">Buy Now</button>
+                </div>
+            </div>
+            <div class="product-card" onclick="showPopup('Nectarine', '₹ 140/kg')">
+                <img src="nectarine.jpg" alt="Nectarine" class="product-image">
+                <div class="product-info">
+                    <h2 class="product-name">Nectarine</h2>
+                    <p class="product-price">₹ 800/kg</p>
+                    <button class="buy-button">Buy Now</button>
+                </div>
+            </div>
+            <div class="product-card" onclick="showPopup('Starfruit', '₹ 200/kg')">
+                <img src="starfruit.jpg" alt="Starfruit" class="product-image">
+                <div class="product-info">
+                    <h2 class="product-name">Starfruit</h2>
+                    <p class="product-price">₹ 160/kg</p>
+                    <button class="buy-button">Buy Now</button>
+                </div>
+            </div>
+            <!-- Add more fruit cards as needed -->
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div id="fruitModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closePopup()">&times;</span>
+            <h2 id="fruitName"></h2>
+            <p id="fruitPrice"></p>
+            <button class="buy-button">Buy Now</button>
+        </div>
+    </div>
+
+    <script>
+        function showPopup(fruit, price) {
+            document.getElementById('fruitName').innerText = fruit;
+            document.getElementById('fruitPrice').innerText = price;
+            document.getElementById('fruitModal').style.display = 'block';
+        }
+
+        function closePopup() {
+            document.getElementById('fruitModal').style.display = 'none';
+        }
+
+        // Close modal when clicking outside of it
+        window.onclick = function(event) {
+            if (event.target === document.getElementById('fruitModal')) {
+                closePopup();
+            }
+        }
+    </script>
+</body>
+</html>
+
+

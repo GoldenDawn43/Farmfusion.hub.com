@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farm Fusion - Connecting Farmers to Markets</title>
+    <style>
+        /* Existing CSS styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            animation: fadeIn 2s ease-in-out;
+        }
+        header {
+    background-image: url(BG.jpg); /* Replace with your image file */
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 2rem;
+    animation: slideIn 1s ease-out;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    background-image: url(data:image/jpeg;base64,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); /* Replace with your image file */
+    background-size: cover;
+    background-position: center;
+}
+
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #333;
+            animation: slideInFromTop 1s ease-out 0.5s;
+        }
+        nav a {
+            padding: 14px 20px;
+            display: block;
+            color: white;
+            text-decoration: none;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+        .container {
+            padding: 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            animation: fadeIn 2s ease-in-out 1s;
+        }
+        .feature-box {
+            background-color: white;
+            border: 1px solid #ccc;
+            width: 30%;
+            margin-bottom: 20px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 1s forwards;
+        }
+        .feature-box:nth-child(odd) {
+            animation-delay: 0.5s;
+        }
+        .feature-box:nth-child(even) {
+            animation-delay: 1s;
+        }
+        .feature-box h3 {
+            color: #4CAF50;
+        }
+        form {
+            background-color: white;
+            padding: 20px;
+            border: 1px solid #ccc;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            margin-top: 20px;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 1s forwards;
+            animation-delay: 1.5s;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+            animation: fadeIn 2s ease-in-out 2s;
+        }
+        input[type="text"], input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            box-sizing: border-box;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        input[type="text"]:focus {
+            border-color: #4CAF50;
+            box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes slideInFromTop {
+            from { transform: translateY(-100%); }
+            to { transform: translateY(0); }
+        }
+        /* Language switcher styling */
+        .language-switcher {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 4px;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+        .language-switcher:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <button class="language-switcher" onclick="toggleLanguage()">Switch to Gujarati</button>
+    <h1 id="site-title">Farm Fusion</h1>
+    <p id="site-slogan">Connecting Farmers to Markets, Growing Together</p>
+</header>
+<link rel="stylesheet" href="/html/style.css">
+<nav>
+    <a href="#" id="nav-home">Home</a>
+    <a href="file:///C:/Users/Divy/Desktop/New%20folder/marketplace.html" id="nav-marketplace">Marketplace</a>
+    <a href="file:///C:/Users/Divy/Desktop/New%20folder/farmee.html" id="nav-farmers">Farmers</a>
+    <a href="file:///C:/Users/Divy/Desktop/New%20folder/Support.html" id="nav-support">Support</a>
+</nav>
+
+<div class="container">
+    <section>
+        <h2 id="welcome-title">Welcome to Farm Fusion</h2>
+        <p id="welcome-text">This website is designed to help farmers sell fruits, veggies, and cereals directly to consumers, removing mediators and increasing their efficiency and productivity.</p>
+    </section>
+
+    <section class="features">
+        <div class="feature-box">
+            <h3 id="feature-quick-links">Quick Links</h3>
+            <p id="feature-quick-links-text">Access all tasks with ease, including product search, filtering options, and browsing.</p>
+        </div>
+        <div class="feature-box">
+            <h3 id="feature-direct-marketplace">Direct Marketplace</h3>
+            <p id="feature-direct-marketplace-text">Buy and sell products directly without the need for intermediaries.</p>
+        </div>
+        <div class="feature-box">
+            <h3 id="feature-search-filter">Search & Filter</h3>
+            <p id="feature-search-filter-text">Filter and search products by type, location, and availability for easy purchasing.</p>
+        </div>
+        <div class="feature-box">
+            <h3 id="feature-simple-registration">Simple Registration</h3>
+            <p id="feature-simple-registration-text">Easy-to-use registration form for farmers to enter details like farm location and produce.</p>
+        </div>
+        <div class="feature-box">
+            <h3 id="feature-best-time-to-sell">Best Time to Sell</h3>
+            <p id="feature-best-time-to-sell-text">Farmers can use this tool to get an estimate of the best time to sell their produce.</p>
+        </div>
+        <div class="feature-box">
+            <h3 id="feature-sales-data">Sales Data</h3>
+            <p id="feature-sales-data-text">Non-dynamic placeholder showing average selling prices and best-selling products.</p>
+        </div>
+    </section>
+
+    <section>
+        <h2 id="register-title">Register as a Farmer</h2>
+        <form>
+            <label for="name" id="label-name">Name:</label><br>
+            <input type="text" id="name" name="name" placeholder="Your Name"><br><br>
+
+            <label for="location" id="label-location">Farm Location:</label><br>
+            <input type="text" id="location" name="location" placeholder="Farm Location"><br><br>
+
+            <label for="produce" id="label-produce">Type of Produce:</label><br>
+            <input type="text" id="produce" name="produce" placeholder="Type of Produce"><br><br>
+
+            <label for="contact" id="label-contact">Contact Info:</label><br>
+            <input type="text" id="contact" name="contact" placeholder="Contact Info"><br><br>
+
+            <label for="payment" id="label-payment">Preferred Payment Method:</label><br>
+            <input type="text" id="payment" name="payment" placeholder="Payment Method"><br><br>
+
+            <input type="submit" value="Register">
+        </form>
+    </section>
+</div>
+
+<footer>
+    <p id="footer-text">&copy; 2024 Farm Fusion. All rights reserved.</p>
+</footer>
+
+<script>
+    // Language data
+    const translations = {
+        en: {
+            "site-title": "Farm Fusion",
+            "site-slogan": "Connecting Farmers to Markets, Growing Together",
+            "welcome-title": "Welcome to Farm Fusion",
+            "welcome-text": "This website is designed to help farmers sell fruits, veggies, and cereals directly to consumers, removing mediators and increasing their efficiency and productivity.",
+            "feature-quick-links": "Quick Links",
+            "feature-quick-links-text": "Access all tasks with ease, including product search, filtering options, and browsing.",
+            "feature-direct-marketplace": "Direct Marketplace",
+            "feature-direct-marketplace-text": "Buy and sell products directly without the need for intermediaries.",
+            "feature-search-filter": "Search & Filter",
+            "feature-search-filter-text": "Filter and search products by type, location, and availability for easy purchasing.",
+            "feature-simple-registration": "Simple Registration",
+            "feature-simple-registration-text": "Easy-to-use registration form for farmers to enter details like farm location and produce.",
+            "feature-best-time-to-sell": "Best Time to Sell",
+            "feature-best-time-to-sell-text": "Farmers can use this tool to get an estimate of the best time to sell their produce.",
+            "feature-sales-data": "Sales Data",
+            "feature-sales-data-text": "Non-dynamic placeholder showing average selling prices and best-selling products.",
+            "register-title": "Register as a Farmer",
+            "label-name": "Name:",
+            "label-location": "Farm Location:",
+            "label-produce": "Type of Produce:",
+            "label-contact": "Contact Info:",
+            "label-payment": "Preferred Payment Method:",
+            "footer-text": "&copy; 2024 Farm Fusion. All rights reserved."
+        },
+        gu: {
+            "site-title": "ફાર્મ ફ્યૂઝન",
+            "site-slogan": "કર્ષકોને બજારો સાથે જોડવું, એકસાથે વધવું",
+            "welcome-title": "ફાર્મ ફ્યૂઝનમાં આપનું સ્વાગત છે",
+            "welcome-text": "આ વેબસાઇટ કૃષિ સંબંધિત મિડિયેટરોને દૂર કરીને, ખેડૂતને સીધા ગ્રાહકોને ફળો, શાકભાજી, અને અનાજ વેચવામાં સહાય કરવા માટે ડિઝાઇન કરવામાં આવી છે.",
+            "feature-quick-links": "ઝડપી લિંક્સ",
+            "feature-quick-links-text": "ઉત્પાદન શોધ, ફિલ્ટરિંગ વિકલ્પો અને બ્રાઉઝિંગ સહિત તમામ કાર્ય સરળતાથી પ્રવેશ કરો.",
+            "feature-direct-marketplace": "સિધા બજાર",
+            "feature-direct-marketplace-text": "મધ્યસ્થીઓની જરૂર વિના સીધા ઉત્પાદનો ખરીદો અને વેચો.",
+            "feature-search-filter": "શોધ અને ફિલ્ટર",
+            "feature-search-filter-text": "ઉત્પાદન પ્રકાર, સ્થાન, અને ઉપલબ્ધતા દ્વારા શોધો અને ફિલ્ટર કરો.",
+            "feature-simple-registration": "સરળ નોંધણી",
+            "feature-simple-registration-text": "ખેડૂતને તેમના કૃષિ સ્થળ અને ઉત્પાદન જેવી વિગતો દાખલ કરવા માટે સરળ રજીસ્ટ્રેશન ફોર્મ.",
+            "feature-best-time-to-sell": "વેચવા માટે શ્રેષ્ઠ સમય",
+            "feature-best-time-to-sell-text": "ખેડૂત તેમના ઉત્પાદનો વેચવા માટે શ્રેષ્ઠ સમયનો અંદાજ મેળવવા માટે આ સાધનનો ઉપયોગ કરી શકે છે.",
+            "feature-sales-data": "વેચાણ માહિતી",
+            "feature-sales-data-text": "સરેરાશ વેચાણ ભાવ અને શ્રેષ્ઠ વેચાતા ઉત્પાદનો દર્શાવતા અજાયબ પ્લેસહોલ્ડર.",
+            "register-title": "ખેડૂત તરીકે નોંધણી કરો",
+            "label-name": "નામ:",
+            "label-location": "કૃષિ સ્થળ:",
+            "label-produce": "ઉત્પાદન પ્રકાર:",
+            "label-contact": "સંપર્ક માહિતી:",
+            "label-payment": "પસંદગીની ચુકવણી પદ્ધતિ:",
+            "footer-text": "&copy; 2024 ફાર્મ ફ્યૂઝન. તમામ અધિકારો સુરક્ષિત."
+        }
+    };
+
+    let currentLanguage = 'en';
+
+    function toggleLanguage() {
+        currentLanguage = currentLanguage === 'en' ? 'gu' : 'en';
+        updateText();
+        document.querySelector('.language-switcher').textContent = currentLanguage === 'en' ? 'Switch to Gujarati' : 'Switch to English';
+    }
+
+    function updateText() {
+        for (const [key, value] of Object.entries(translations[currentLanguage])) {
+            const element = document.getElementById(key);
+            if (element) {
+                element.innerHTML = value;
+            }
+        }
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seed & Crop Farmers</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            animation: fadeIn 1s ease-in;
+        }
+
+        header {
+    background-image: url(BG.jpg); /* Replace with your image file */
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 2rem;
+    animation: slideIn 1s ease-out;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    background-image: url(data:image/jpeg;base64,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); /* Replace with your image file */
+    background-size: cover;
+    background-position: center;
+}
+
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+
+        .farmer-profiles {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            animation: fadeInUp 1.5s ease-in-out;
+        }
+
+        .profile {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.2);
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .profile img {
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            margin-bottom: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        .profile h3 {
+            margin: 10px 0 5px;
+            font-size: 1.2em;
+        }
+
+        .profile p {
+            margin: 5px 0;
+        }
+
+        .profile .rating {
+            font-size: 1em;
+            color: #ff9800;
+        }
+
+        .profile .supply {
+            font-size: 0.9em;
+            color: #666;
+        }
+
+        .profile .buy-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 10px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .profile:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 25px rgba(0,0,0,0.3);
+        }
+
+        .profile img:hover {
+            transform: rotate(10deg);
+        }
+
+        .profile .buy-button:hover {
+            background-color: #45a049;
+            transform: scale(1.1);
+        }
+
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+            animation: slideInUp 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideInDown {
+            from { transform: translateY(-100%); }
+            to { transform: translateY(0); }
+        }
+
+        @keyframes slideInUp {
+            from { transform: translateY(100%); }
+            to { transform: translateY(0); }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Seed & Crop Farmers</h1>
+        <p>Find the best farmers and buy quality seeds and crops directly.</p>
+    </header>
+    <nav>
+        <a href="#" id="nav-home">Home</a>
+        <a href="file:///C:/Users/Divy/Desktop/New%20folder/marketplace.html" id="nav-marketplace">Marketplace</a>
+        <a href="#" id="nav-support">Support</a>
+    </nav>
+    
+    <div class="container">
+        <section class="farmer-profiles">
+            <div class="profile">
+                <img src="https://media.istockphoto.com/id/1205325344/photo/farmer-in-agricultural-field.jpg?s=612x612&w=0&k=20&c=krsRk4T2MsmMy6PmrpPDR0i_1ja3_jQaNl80fBejWck=" alt="Farmer 1">
+                <h3>Rajesh Kumar</h3>
+                <p>Specialty: Organic Vegetables</p>
+                <p class="rating">Rating: ★★★★☆ (4.5/5)</p>
+                <p class="supply">Supplies: Vasad </p>
+                <a href="mailto:rajesh@example.com" class="buy-button">Contact & Buy</a>
+            </div>
+
+            <div class="profile">
+                <img src="vibarkar.jpg" alt="Farmer 2">
+                <h3>Vibakar Prasad</h3>
+                <p>Specialty: Exotic Fruits</p>
+                <p class="rating">Rating: ★★★★★ (5/5)</p>
+                <p class="supply">Supplies: Ahmedabad </p>
+                <a href="mailto:sita@example.com" class="buy-button">Contact & Buy</a>
+            </div>
+
+            <div class="profile">
+                <img src="Amit.jpg" alt="Farmer 3">
+                <h3>Amit Sharma</h3>
+                <p>Specialty: Herbs and Spices</p>
+                <p class="rating">Rating: ★★★☆☆ (3.8/5)</p>
+                <p class="supply">Supplies: Vadodara </p>
+                <a href="mailto:amit@example.com" class="buy-button">Contact & Buy</a>
+            </div>
+
+            <div class="profile">
+                <img src="Neha.jpg" alt="Farmer 4">
+                <h3>Neha Singh</h3>
+                <p>Specialty: Grains</p>
+                <p class="rating">Rating: ★★★★☆ (4.2/5)</p>
+                <p class="supply">Supplies: Rajkot </p>
+                <a href="mailto:neha@example.com" class="buy-button">Contact & Buy</a>
+            </div>
+
+            <div class="profile">
+                <img src="vikram.jpg" alt="Farmer 5">
+                <h3>Vikram Reddy</h3>
+                <p>Specialty: Flowers</p>
+                <p class="rating">Rating: ★★★★☆ (4.7/5)</p>
+                <p class="supply">Supplies: Sabarkatha </p>
+                <a href="mailto:vikram@example.com" class="buy-button">Contact & Buy</a>
+            </div>
+
+            <div class="profile">
+                <img src="pooja.jpg" alt="Farmer 6">
+                <h3>Pooja Mehta</h3>
+                <p>Specialty: Berries</p>
+                <p class="rating">Rating: ★★★☆☆ (3.9/5)</p>
+                <p class="supply">Supplies: Surat </p>
+                <a href="mailto:pooja@example.com" class="buy-button">Contact & Buy</a>
+            </div>
+
+            <div class="profile">
+                <img src="sunil(1).jpg" alt="Farmer 7">
+                <h3>Sunil Gupta</h3>
+                <p>Specialty: Root Vegetables</p>
+                <p class="rating">Rating: ★★★★☆ (4.4/5)</p>
+                <p class="supply">Supplies: Dwarka</p>
+                <a href="mailto:sunil@example.com" class="buy-button">Contact & Buy</a>
+            </div>
+
+            <div class="profile">
+                <img src="priya.jpg" alt="Farmer 8">
+                <h3>Riya Verma</h3>
+                <p>Specialty: Nuts and Seeds</p>
+                <p class="rating">Rating: ★★★☆☆ (3.6/5)</p>
+                <p class="supply">Supplies: Bhuj </p>
+                <a href="mailto:priya@example.com" class="buy-button">Contact & Buy</a>
+            </div>
+
+            <div class="profile">
+                <img src="ravi.jpg" alt="Farmer 9">
+                <h3>Ravi Joshi</h3>
+                <p>Specialty: Beans</p>
+                <p class="rating">Rating: ★★★★☆ (4.1/5)</p>
+                <p class="supply">Supplies: Nadiad </p>
+                <a href="mailto:ravi@example.com" class="buy-button">Contact & Buy</a>
+            </div>
+
+            <div class="profile">
+                <img src="kavita.jpg" alt="Farmer 10">
+                <h3>Kavita Sharma</h3>
+                <p>Specialty: Melons</p>
+                <p class="rating">Rating: ★★★★☆ (4.3/5)</p>
+                <p class="supply">Supplies: Valsad </p>
+                <a href="mailto:kavita@example.com" class="buy-button">Contact & Buy</a
+            </div>
+        </section>
+    </div>
+    
+    <footer>
+        <p>&copy; 2024 Farm Fusion. All rights reserved.</p>
+    </footer>
+</body>
+</html>
